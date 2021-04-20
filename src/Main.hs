@@ -17,5 +17,5 @@ stc cpu = Cpu (opcode cpu) (CpuState (a s) (b s) (c s) (d s) (e s) (h s) (l s) (
   where
     s = state cpu
     f = flags s
-    newCycles = cycles s + 1
+    newCycles = cycles s + 4
     newCarry = True
