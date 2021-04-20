@@ -1,0 +1,26 @@
+name:    STC
+version: "1.0.0"
+
+extra-source-files:
+- README.md
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- scotty
+
+default-extensions:
+  - DeriveGeneric
+  - DerivingStrategies
+  - GeneralizedNewtypeDeriving
+  - OverloadedStrings
+
+executables:
+  stc:
+    main:                Main.hs
+    source-dirs:         src
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
