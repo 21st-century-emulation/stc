@@ -1,5 +1,5 @@
-docker build -q -t stc .
-docker run --rm --name stc -d -p 8080:8080 stc
+docker build -q -t $1 .
+docker run --rm --name stc -d -p 8080:8080 $1
 
 RESULT=`curl -s --header "Content-Type: application/json" \
   --request POST \
