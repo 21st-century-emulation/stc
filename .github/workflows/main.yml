@@ -12,6 +12,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Clean some disk space
+        run: |
+          sudo apt clean
+
       - name: Test microservice
         run: |
           ./test.sh
