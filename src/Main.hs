@@ -1,11 +1,14 @@
 module Main where
 
 import Cpu (Cpu (..),CpuState (..), CpuFlags (carry, CpuFlags, auxCarry, zero, sign, parity))
-import Web.Scotty ( json, jsonData, post, scotty )
+import Web.Scotty ( get, json, jsonData, post, scotty, text )
 
 main :: IO ()
 main = do
   scotty 8080 $ do
+    get "/status" $
+      do
+        text "Healthy"
     post "/api/v1/execute" $
       do
         cpu <- jsonData
