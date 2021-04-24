@@ -30,6 +30,7 @@ data CpuState = CpuState
 
 data Cpu = Cpu
   { opcode :: Word8,
+    id :: String,
     state :: CpuState
   }
   deriving (Generic)

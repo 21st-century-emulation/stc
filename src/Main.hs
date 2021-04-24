@@ -1,5 +1,6 @@
 module Main where
 
+import Prelude hiding (id)
 import Cpu (Cpu (..),CpuState (..), CpuFlags (carry, CpuFlags, auxCarry, zero, sign, parity))
 import Web.Scotty ( get, json, jsonData, post, scotty, text )
 
@@ -16,7 +17,7 @@ main = do
         json updatedCpu
 
 stc :: Cpu -> Cpu
-stc cpu = Cpu (opcode cpu) (CpuState (a s) (b s) (c s) (d s) (e s) (h s) (l s) (stackPointer s) (programCounter s) newCycles (CpuFlags (sign f) (zero f) (auxCarry f) (parity f) newCarry))
+stc cpu = Cpu (opcode cpu) (id cpu) (CpuState (a s) (b s) (c s) (d s) (e s) (h s) (l s) (stackPointer s) (programCounter s) newCycles (CpuFlags (sign f) (zero f) (auxCarry f) (parity f) newCarry))
   where
     s = state cpu
     f = flags s
