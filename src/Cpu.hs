@@ -24,7 +24,8 @@ data CpuState = CpuState
     stackPointer :: Word16,
     programCounter :: Word16,
     cycles :: Integer,
-    flags :: CpuFlags
+    flags :: CpuFlags,
+    interruptsEnabled :: Bool
   }
   deriving (Generic)
 
